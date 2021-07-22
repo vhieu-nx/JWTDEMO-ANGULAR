@@ -1,0 +1,23 @@
+{
+  "projectjhipsterApp": {
+    "hieu": {
+      "home": {
+        "title": "Hieus",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Hieu",
+        "createOrEditLabel": "Create or edit a Hieu",
+        "notFound": "No Hieus found"
+      },
+      "created": "A new Hieu is created with identifier {{ param }}",
+      "updated": "A Hieu is updated with identifier {{ param }}",
+      "deleted": "A Hieu is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Hieu {{ id }}?"
+      },
+      "detail": {
+        "title": "Hieu"
+      },
+      "id": "ID"
+    }
+  }
+}

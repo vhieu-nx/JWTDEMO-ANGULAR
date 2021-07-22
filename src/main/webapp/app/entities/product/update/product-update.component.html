@@ -1,0 +1,120 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-product-heading" data-cy="ProductCreateUpdateHeading" jhiTranslate="projectjhipsterApp.product.home.createOrEditLabel">
+        Create or edit a Product
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="projectjhipsterApp.product.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="projectjhipsterApp.product.category" for="field_category">Category</label>
+          <input type="text" class="form-control" name="category" id="field_category" data-cy="category" formControlName="category" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="projectjhipsterApp.product.price" for="field_price">Price</label>
+          <input type="text" class="form-control" name="price" id="field_price" data-cy="price" formControlName="price" />
+          <div *ngIf="editForm.get('price')!.invalid && (editForm.get('price')!.dirty || editForm.get('price')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('price')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('price')?.errors?.minlength"
+              jhiTranslate="entity.validation.minlength"
+              [translateValues]="{ min: 0 }"
+            >
+              This field is required to be at least 0 characters.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('price')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 20 }"
+            >
+              This field cannot be longer than 20 characters.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('price')?.errors?.pattern"
+              jhiTranslate="entity.validation.pattern"
+              [translateValues]="{ pattern: 'Price' }"
+            >
+              This field should follow pattern for "Price".
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="projectjhipsterApp.product.quantity" for="field_quantity">Quantity</label>
+          <input type="text" class="form-control" name="quantity" id="field_quantity" data-cy="quantity" formControlName="quantity" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="projectjhipsterApp.product.description" for="field_description"
+            >Description</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="field_description"
+            data-cy="description"
+            formControlName="description"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="projectjhipsterApp.product.product_category" for="field_product_category"
+            >Product Category</label
+          >
+          <select
+            class="form-control"
+            id="field_product_category"
+            data-cy="product_category"
+            name="product_category"
+            formControlName="product_category"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                categoryOption.id === editForm.get('product_category')!.value?.id ? editForm.get('product_category')!.value : categoryOption
+              "
+              *ngFor="let categoryOption of categoriesSharedCollection; trackBy: trackCategoryById"
+            >
+              {{ categoryOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

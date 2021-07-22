@@ -1,0 +1,25 @@
+{
+  "projectjhipsterApp": {
+    "ha": {
+      "home": {
+        "title": "Has",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Ha を追加",
+        "createOrEditLabel": "Haを追加または編集",
+        "notFound": "No Has found"
+      },
+      "created": "A new Ha is created with identifier {{ param }}",
+      "updated": "A Ha is updated with identifier {{ param }}",
+      "deleted": "A Ha is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Ha {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Ha"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description"
+    }
+  }
+}

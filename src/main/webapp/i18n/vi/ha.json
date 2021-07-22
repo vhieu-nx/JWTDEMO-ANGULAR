@@ -1,0 +1,25 @@
+{
+  "projectjhipsterApp": {
+    "ha": {
+      "home": {
+        "title": "Has",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Ha",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Ha",
+        "notFound": "No Has found"
+      },
+      "created": "Một Ha mới được tạo với định danh {{ param }}",
+      "updated": "Một Ha cập nhật với định danh {{ param }}",
+      "deleted": "Một Ha đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Ha {{ id }}?"
+      },
+      "detail": {
+        "title": "Ha"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description"
+    }
+  }
+}

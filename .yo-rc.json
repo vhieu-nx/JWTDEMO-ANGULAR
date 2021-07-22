@@ -42,6 +42,8 @@
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
     "languages": ["en", "fr", "ja", "ko", "vi"],
-    "otherModules": []
+    "otherModules": [],
+    "lastLiquibaseTimestamp": 1626857166000,
+    "entities": ["Hieu", "Category", "Product", "Ha"]
   }
 }

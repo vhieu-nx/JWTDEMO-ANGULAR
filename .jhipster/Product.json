@@ -1,0 +1,43 @@
+{
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "0",
+      "fieldValidateRulesMaxlength": "20",
+      "fieldValidateRulesPattern": "^[a-zA-Z0-9]*$"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "product_category",
+      "otherEntityName": "category",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "service": "serviceImpl",
+  "dto": "no",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "pagination",
+  "name": "Product",
+  "changelogDate": "20210721032139"
+}

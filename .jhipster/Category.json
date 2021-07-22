@@ -1,0 +1,17 @@
+{
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": []
+    }
+  ],
+  "relationships": [],
+  "service": "serviceImpl",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "infinite-scroll",
+  "name": "Category",
+  "changelogDate": "20210721023316"
+}
